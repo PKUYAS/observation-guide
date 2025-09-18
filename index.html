@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>青年天文学会2025年9月27日外出观测指南</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --md3-primary: #307599;
+      --md3-on-primary: #ffffff;
+      --md3-surface: #f4f8fb;
+      --md3-on-surface: #1a1d20;
+      --md3-surface-container: #dde6ee;
+      --md3-outline: rgba(26, 29, 32, 0.16);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --md3-primary: #82c2ff;
+        --md3-on-primary: #063154;
+        --md3-surface: #0f1820;
+        --md3-on-surface: #e0e7ef;
+        --md3-surface-container: #1c2833;
+        --md3-outline: rgba(205, 217, 229, 0.24);
+      }
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto Flex', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--md3-surface);
+      color: var(--md3-on-surface);
+      letter-spacing: 0.01em;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background-color: color-mix(in srgb, var(--md3-surface) 82%, transparent);
+      border-bottom: 1px solid var(--md3-outline);
+    }
+
+    .app-bar {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+    }
+
+    .app-bar__title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .app-bar__title h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .app-bar__title span {
+      font-size: 0.875rem;
+      color: color-mix(in srgb, var(--md3-on-surface) 72%, transparent);
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px clamp(16px, 4vw, 40px) 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero-card {
+      border-radius: 28px;
+      background: radial-gradient(circle at top right, color-mix(in srgb, var(--md3-primary) 24%, var(--md3-surface)), var(--md3-surface));
+      border: 1px solid var(--md3-outline);
+      padding: clamp(24px, 5vw, 40px);
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-card h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-card p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    section {
+      border-radius: 24px;
+      background-color: var(--md3-surface-container);
+      border: 1px solid var(--md3-outline);
+      padding: clamp(20px, 4vw, 32px);
+      display: grid;
+      gap: 16px;
+    }
+
+    section header {
+      position: static;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    section h3 {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .info-card {
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid var(--md3-outline);
+      background-color: color-mix(in srgb, var(--md3-surface) 92%, transparent);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .info-card__body {
+      flex: 1;
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 8px 16px;
+    }
+
+    dt {
+      font-weight: 600;
+      color: color-mix(in srgb, var(--md3-on-surface) 88%, transparent);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: color-mix(in srgb, var(--md3-primary) 8%, var(--md3-surface));
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+    }
+
+    .table-container table {
+      min-width: 560px;
+    }
+
+    table thead {
+      background-color: color-mix(in srgb, var(--md3-primary) 18%, var(--md3-surface));
+      color: var(--md3-on-surface);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--md3-outline);
+    }
+
+    tbody tr:last-child td,
+    tbody tr:last-child th {
+      border-bottom: none;
+    }
+
+    .notes-list {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-day {
+      border-radius: 18px;
+      border: 1px solid var(--md3-outline);
+      background-color: color-mix(in srgb, var(--md3-surface) 92%, transparent);
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .timeline-day h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .timeline-item span {
+      font-variant-numeric: tabular-nums;
+      min-width: 64px;
+      font-weight: 600;
+      color: color-mix(in srgb, var(--md3-on-surface) 74%, transparent);
+    }
+
+    .contacts {
+      display: grid;
+      gap: 8px;
+      font-size: 1rem;
+    }
+
+    .contacts a {
+      color: var(--md3-on-surface);
+      text-decoration: none;
+    }
+
+    .contacts a:hover {
+      text-decoration: underline;
+    }
+
+    .celestial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .celestial-card {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--md3-outline);
+      background-color: color-mix(in srgb, var(--md3-surface) 96%, transparent);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .celestial-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .celestial-content {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .celestial-content h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .celestial-meta {
+      display: grid;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+
+    .celestial-meta span {
+      display: flex;
+      justify-content: space-between;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .celestial-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: flex-start;
+      align-content: flex-start;
+    }
+
+    .celestial-tags:not(:empty) {
+      margin-top: auto;
+    }
+
+    .chip {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background-color: color-mix(in srgb, var(--md3-primary) 12%, var(--md3-surface));
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .footnote {
+      font-size: 0.85rem;
+      color: color-mix(in srgb, var(--md3-on-surface) 70%, transparent);
+      line-height: 1.5;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="app-bar">
+      <div class="app-bar__title">
+        <h1>外出观测指南</h1>
+        <span>青年天文学会 · 2025年9月27日 · 内蒙古正镶白旗草原天眼星空营地</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="hero-card" aria-labelledby="hero-title">
+      <h2 id="hero-title">青年天文学会2025年9月27日外出观测指南</h2>
+      <p>带上好奇与期待，一起奔赴宝拉根陶海草原的辽阔星幕。今晚我们将深入银河核心，探访行星、星云与星系的身影，聆听夜风与星光的交织。</p>
+      <p>请确认装备与保暖物资，保持随队行动，调暗所有屏幕亮度，尊重每一位同伴的暗适应。祝观测顺利、收获满满。</p>
+    </article>
+
+    <section aria-labelledby="location-section">
+      <h3 id="location-section">观测地基本信息</h3>
+      <div class="info-grid">
+        <div class="info-card">
+          <h4>观测地点</h4>
+          <div class="info-card__body">
+            <p>内蒙古自治区<br>正镶白旗<br>宝拉根陶海苏木<br>陶木宝拉格嘎查<br>草原天眼星空营地</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>经纬度 / 海拔</h4>
+          <div class="info-card__body">
+            <dl>
+              <dt>纬度</dt><dd>42°13′8″ N</dd>
+              <dt>经度</dt><dd>115°14′28″ E</dd>
+              <dt>海拔</dt><dd>1463 m</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>晨昏蒙影</h4>
+          <div class="info-card__body">
+            <dl>
+              <dt>日落</dt><dd>18:50</dd>
+              <dt>民用昏影终</dt><dd>19:17</dd>
+              <dt>航海昏影终</dt><dd>19:50</dd>
+              <dt>天文昏影终</dt><dd>20:24</dd>
+              <dt>天文晨光始</dt><dd>04:40</dd>
+              <dt>航海晨光始</dt><dd>05:14</dd>
+              <dt>民用晨光始</dt><dd>05:47</dd>
+              <dt>日出</dt><dd>06:14</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="info-card">
+          <h4>月相与动向</h4>
+          <div class="info-card__body">
+            <dl>
+              <dt>月出</dt><dd>30 日 06:27</dd>
+              <dt>月落</dt><dd>29 日 18:45</dd>
+              <dt>星座</dt><dd>双鱼座</dd>
+              <dt>相位</dt><dd>新月至娥眉月 (0—0.5%)</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="plan-section">
+      <h3 id="plan-section">观测计划</h3>
+      <p>当晚由学会骨干负责星空导览与望远镜操作教学，欢迎自带双筒望远镜、相机等器材参与深空与行星观测。</p>
+      <div class="info-card">
+        <h4>主要行星概览</h4>
+        <div class="chip">当地时间</div>
+        <div class="table-container" role="region" aria-label="主要行星概览表格容器">
+          <table aria-describedby="plan-section">
+            <thead>
+              <tr>
+                <th scope="col">行星</th>
+                <th scope="col">可见性</th>
+                <th scope="col">星等</th>
+                <th scope="col">视直径</th>
+                <th scope="col">升起 / 落下</th>
+                <th scope="col">所在星座</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">水星</th>
+                <td>日落附近低空，难以观测</td>
+                <td>+3.9</td>
+                <td>11.24″</td>
+                <td>18:08 落 (29 日)</td>
+                <td>双鱼座</td>
+              </tr>
+              <tr>
+                <th scope="row">金星</th>
+                <td>黎明前明亮晨星</td>
+                <td>-4.1</td>
+                <td>57.98″</td>
+                <td>05:14 升 (30 日)</td>
+                <td>双鱼座</td>
+              </tr>
+              <tr>
+                <th scope="row">火星</th>
+                <td>午夜后位于东南高空</td>
+                <td>+0.4</td>
+                <td>8.37″</td>
+                <td>03:16 落 (30 日)</td>
+                <td>双子座</td>
+              </tr>
+              <tr>
+                <th scope="row">木星</th>
+                <td>前半夜明亮目标</td>
+                <td>-2.1</td>
+                <td>36.31″</td>
+                <td>00:25 落 (30 日)</td>
+                <td>金牛座</td>
+              </tr>
+              <tr>
+                <th scope="row">土星</th>
+                <td>黎明前位于东南方</td>
+                <td>+1.2</td>
+                <td>15.73″</td>
+                <td>05:51 升 (30 日)</td>
+                <td>宝瓶座</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="targets-section">
+      <h3 id="targets-section">推荐天体一览</h3>
+      <p>以下时间基于内蒙古正镶白旗 (UTC+8) 2025 年 9 月 29 日夜间星历估算，适用于当晚观测。照片均来自公开版权天文影像，仅供参考。</p>
+      <div class="celestial-grid">
+        <article class="celestial-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/NANeb3PS23_SCNR.jpg" alt="NGC 7000 北美洲星云" />
+          <div class="celestial-content">
+            <h4>NGC 7000 · 北美洲星云</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>18:22</span></span>
+              <span><strong>中天</strong><span>01:05</span></span>
+              <span><strong>降落</strong><span>07:45</span></span>
+            </div>
+            <p>浩瀚的氢气发射星云，与美国大陆轮廓相似。适合广角相机或望远镜搭配窄带滤镜拍摄。</p>
+            <div class="celestial-tags">
+              <span class="chip">发射星云</span>
+              <span class="chip">天鹅座</span>
+              <span class="chip">摄影友好</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="celestial-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/FlamingStarHunterWilson.jpg" alt="IC 405 火焰星云" />
+          <div class="celestial-content">
+            <h4>IC 405 · 火焰星云</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>19:41</span></span>
+              <span><strong>中天</strong><span>02:48</span></span>
+              <span><strong>降落</strong><span>09:52</span></span>
+            </div>
+            <p>位于御夫座的反射与发射复合星云，呈现蓝红相间的绚丽色彩。适合长焦摄影，视觉观测需暗天。</p>
+            <div class="celestial-tags">
+              <span class="chip">复合星云</span>
+              <span class="chip">御夫座</span>
+              <span class="chip">中等望远镜</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="celestial-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/IC1805_--_H-alpha_%2B_RGB.jpg" alt="IC 1805 心脏星云" />
+          <div class="celestial-content">
+            <h4>IC 1805 · 心脏星云</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>18:55</span></span>
+              <span><strong>中天</strong><span>01:59</span></span>
+              <span><strong>降落</strong><span>09:03</span></span>
+            </div>
+            <p>仙后座明亮氢气区，形似跳动之心。适用重口径望远镜配窄带或双窄带滤镜观测。</p>
+            <div class="celestial-tags">
+              <span class="chip">发射星云</span>
+              <span class="chip">仙后座</span>
+              <span class="chip">窄带推荐</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="celestial-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/960px-Andromeda_Galaxy_%28with_h-alpha%29.jpg" alt="M31 仙女座星系" />
+          <div class="celestial-content">
+            <h4>M31 · 仙女座星系</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>17:09</span></span>
+              <span><strong>中天</strong><span>23:42</span></span>
+              <span><strong>降落</strong><span>06:18</span></span>
+            </div>
+            <p>肉眼即可见的邻近星系。适合双筒望远镜扫掠，长焦拍摄可捕捉伴星系 M32、M110。</p>
+            <div class="celestial-tags">
+              <span class="chip">星系</span>
+              <span class="chip">仙女座</span>
+              <span class="chip">双筒友好</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="celestial-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/M33_-_Triangulum_Galaxy.jpg/960px-M33_-_Triangulum_Galaxy.jpg" alt="M33 三角座星系" />
+          <div class="celestial-content">
+            <h4>M33 · 三角座星系</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>17:48</span></span>
+              <span><strong>中天</strong><span>00:21</span></span>
+              <span><strong>降落</strong><span>06:58</span></span>
+            </div>
+            <p>局部群第三大星系，低表面亮度需暗天条件。推荐大口径望远镜或长曝光摄影。</p>
+            <div class="celestial-tags">
+              <span class="chip">星系</span>
+              <span class="chip">三角座</span>
+              <span class="chip">长曝光</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="footnote">时间为估算值，受大气折射、地形遮挡及仪器地平高度影响可能±10 分钟。请结合现场实测进行微调。</p>
+    </section>
+
+    <section aria-labelledby="notes-section">
+      <h3 id="notes-section">重点注意事项</h3>
+      <ol class="notes-list">
+        <li><strong>保暖优先：</strong>夜间气温可能跌至 -10℃ 以下，请穿羽绒服或棉袄、佩戴手套、厚袜与保暖鞋，可准备高热量食品补充能量。</li>
+        <li><strong>保管财物：</strong>住宿为二至三人间独立卫浴，请妥善保管个人贵重物品。</li>
+        <li><strong>保持队形：</strong>严禁独自离开观测区，如遇险情请立即联系负责人。</li>
+        <li><strong>观测礼仪：</strong>禁止使用白光手电与闪光灯，手机调至夜间模式与最低亮度；如需使用激光指星笔，务必确保朝向天空。</li>
+        <li><strong>注意行走安全：</strong>夜间设备与线缆较多，请勿触碰他人器材，避免碰撞望远镜与相机。</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="schedule-section">
+      <h3 id="schedule-section">时间安排</h3>
+      <div class="timeline">
+        <div class="timeline-day">
+          <h4>9 月 29 日（周六）</h4>
+          <div class="timeline-item"><span>09:50</span>北京大学南门集合</div>
+          <div class="timeline-item"><span>10:00</span>准时发车（车牌号：京A JZ972），迟到将错过本次活动</div>
+          <div class="timeline-item"><span>17:00</span>抵达营地，分配房间并用晚餐</div>
+          <div class="timeline-item"><span>20:30</span>开始天文观测与望远镜教学、星空导览、星空摄影</div>
+        </div>
+        <div class="timeline-day">
+          <h4>9 月 30 日（周日）</h4>
+          <div class="timeline-item"><span>08:30</span>起床、洗漱、早餐</div>
+          <div class="timeline-item"><span>09:30</span>前往乌兰哈达火山地质公园考察</div>
+          <div class="timeline-item"><span>11:30</span>午餐</div>
+          <div class="timeline-item"><span>12:30</span>乘大巴返程</div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="contacts-section">
+      <h3 id="contacts-section">领队联系方式</h3>
+      <div class="contacts">
+        <div><strong>丁恒宇（会长）</strong> · <a href="tel:13520753074">135&nbsp;2075&nbsp;3074</a></div>
+        <div><strong>王亿禾（团支部书记）</strong> · <a href="tel:19946079326">199&nbsp;4607&nbsp;9326</a></div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
