@@ -218,6 +218,36 @@
       line-height: 1.6;
     }
 
+    .notes-list--circled {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .notes-list--circled li {
+      position: relative;
+      padding-left: 1.9em;
+    }
+
+    .notes-list--circled li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 600;
+      content: '①';
+    }
+
+    .notes-list--circled li:nth-child(2)::before {
+      content: '②';
+    }
+
+    .notes-list--circled li:nth-child(3)::before {
+      content: '③';
+    }
+
+    .notes-list--circled li:nth-child(4)::before {
+      content: '④';
+    }
+
     .timeline {
       display: grid;
       gap: 12px;
@@ -265,6 +295,21 @@
 
     .contacts a:hover {
       text-decoration: underline;
+    }
+
+    .weather-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .weather-wrapper iframe {
+      width: min(520px, 100%);
+      height: 726px;
+      border: 0;
+      border-radius: 20px;
+      overflow: hidden;
     }
 
     .celestial-grid {
@@ -364,8 +409,10 @@
   <main>
     <article class="hero-card" aria-labelledby="hero-title">
       <h2 id="hero-title">青年天文学会2025年9月27日外出观测指南</h2>
-      <p>带上好奇与期待，一起奔赴宝拉根陶海草原的辽阔星幕。今晚我们将深入银河核心，探访行星、星云与星系的身影，聆听夜风与星光的交织。</p>
-      <p>请确认装备与保暖物资，保持随队行动，调暗所有屏幕亮度，尊重每一位同伴的暗适应。祝观测顺利、收获满满。</p>
+      <p>本次观测我们将前往内蒙古正镶白旗的天眼星空营地，该营地位于宝拉根陶海苏木陶林宝拉格嘎查的草原上。这里不仅有绝佳的观星条件，还紧邻著名的国家天文台明安图观测基地。该基地部署有“新一代厘米-分米波射电日像仪”以及两台20米口径射电望远镜，是中国太阳射电观测和空间天气研究的重要基地。活动第二天，我们也将有机会参观明安图观测站，近距离感受顶尖天文科研的魅力。</p>
+      <p>为确保您拥有一次难忘的观星之旅，请务必仔细阅读随附的观测指南。青年天文学会预祝您观测愉快！</p>
+      <!-- <p>带上好奇与期待，一起奔赴宝拉根陶海草原的辽阔星幕。今晚我们将深入银河核心，探访行星、星云与星系的身影，聆听夜风与星光的交织。</p>
+      <p>请确认装备与保暖物资，保持随队行动，调暗所有屏幕亮度，尊重每一位同伴的暗适应。祝观测顺利、收获满满。</p> -->
     </article>
 
     <section aria-labelledby="location-section">
@@ -391,14 +438,10 @@
           <h4>晨昏蒙影</h4>
           <div class="info-card__body">
             <dl>
-              <dt>日落</dt><dd>18:50</dd>
-              <dt>民用昏影终</dt><dd>19:17</dd>
-              <dt>航海昏影终</dt><dd>19:50</dd>
-              <dt>天文昏影终</dt><dd>20:24</dd>
-              <dt>天文晨光始</dt><dd>04:40</dd>
-              <dt>航海晨光始</dt><dd>05:14</dd>
-              <dt>民用晨光始</dt><dd>05:47</dd>
-              <dt>日出</dt><dd>06:14</dd>
+              <dt>日落</dt><dd>18:08</dd>
+              <dt>天文昏影终</dt><dd>19:41</dd>
+              <dt>天文晨光始</dt><dd>04:39</dd>
+              <dt>日出</dt><dd>06:13</dd>
             </dl>
           </div>
         </div>
@@ -406,10 +449,10 @@
           <h4>月相与动向</h4>
           <div class="info-card__body">
             <dl>
-              <dt>月出</dt><dd>30 日 06:27</dd>
-              <dt>月落</dt><dd>29 日 18:45</dd>
-              <dt>星座</dt><dd>双鱼座</dd>
-              <dt>相位</dt><dd>新月至娥眉月 (0—0.5%)</dd>
+              <dt>月出</dt><dd>27 日 11:37</dd>
+              <dt>月落</dt><dd>27 日 20:22</dd>
+              <dt>星座</dt><dd>天蝎座</dd>
+              <dt>相位</dt><dd>娥眉月 (27%)</dd>
             </dl>
           </div>
         </div>
@@ -418,7 +461,7 @@
 
     <section aria-labelledby="plan-section">
       <h3 id="plan-section">观测计划</h3>
-      <p>当晚由学会骨干负责星空导览与望远镜操作教学，欢迎自带双筒望远镜、相机等器材参与深空与行星观测。</p>
+      <p>当晚会有专门同学讲解星空星座，并带大家用望远镜观察深空天体和行星。同时也欢迎有条件的同学自带双筒望远镜、相机等器材。</p>
       <div class="info-card">
         <h4>主要行星概览</h4>
         <div class="chip">当地时间</div>
@@ -430,50 +473,65 @@
                 <th scope="col">可见性</th>
                 <th scope="col">星等</th>
                 <th scope="col">视直径</th>
-                <th scope="col">升起 / 落下</th>
+                <th scope="col">升</th>
+                <th scope="col">落</th>
                 <th scope="col">所在星座</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">水星</th>
-                <td>日落附近低空，难以观测</td>
-                <td>+3.9</td>
-                <td>11.24″</td>
-                <td>18:08 落 (29 日)</td>
-                <td>双鱼座</td>
-              </tr>
-              <tr>
                 <th scope="row">金星</th>
                 <td>黎明前明亮晨星</td>
-                <td>-4.1</td>
-                <td>57.98″</td>
-                <td>05:14 升 (30 日)</td>
-                <td>双鱼座</td>
+                <td>-3.9</td>
+                <td>11.54″</td>
+                <td>05:34</td>
+                <td>15:31</td>
+                <td>狮子座</td>
               </tr>
               <tr>
                 <th scope="row">火星</th>
-                <td>午夜后位于东南高空</td>
-                <td>+0.4</td>
-                <td>8.37″</td>
-                <td>03:16 落 (30 日)</td>
-                <td>双子座</td>
+                <td>白天前后位于高空，亮度一般</td>
+                <td>+1.6</td>
+                <td>4.03″</td>
+                <td>10:49</td>
+                <td>17:32</td>
+                <td>室女座</td>
               </tr>
               <tr>
                 <th scope="row">木星</th>
-                <td>前半夜明亮目标</td>
+                <td>午夜至清晨明亮目标</td>
                 <td>-2.1</td>
-                <td>36.31″</td>
-                <td>00:25 落 (30 日)</td>
-                <td>金牛座</td>
+                <td>35.68″</td>
+                <td>02:31</td>
+                <td>13:28</td>
+                <td>双子座</td>
               </tr>
               <tr>
                 <th scope="row">土星</th>
-                <td>黎明前位于东南方</td>
-                <td>+1.2</td>
-                <td>15.73″</td>
-                <td>05:51 升 (30 日)</td>
-                <td>宝瓶座</td>
+                <td>傍晚后可见，午夜前后落下</td>
+                <td>+0.6</td>
+                <td>45.29″</td>
+                <td>20:34</td>
+                <td>04:29</td>
+                <td>双鱼座</td>
+              </tr>
+              <tr>
+                <th scope="row">天王星</th>
+                <td>午夜前后位于东北高空</td>
+                <td>+5.7</td>
+                <td>14.12″</td>
+                <td>23:05</td>
+                <td>09:51</td>
+                <td>金牛座</td>
+              </tr>
+              <tr>
+                <th scope="row">海王星</th>
+                <td>前半夜位于东南方，光度较暗</td>
+                <td>+7.8</td>
+                <td>6.01″</td>
+                <td>20:32</td>
+                <td>04:43</td>
+                <td>双鱼座</td>
               </tr>
             </tbody>
           </table>
@@ -483,18 +541,18 @@
 
     <section aria-labelledby="targets-section">
       <h3 id="targets-section">推荐天体一览</h3>
-      <p>以下时间基于内蒙古正镶白旗 (UTC+8) 2025 年 9 月 29 日夜间星历估算，适用于当晚观测。照片均来自公开版权天文影像，仅供参考。</p>
+      <p>以下时间基于内蒙古正镶白旗 (UTC+8) 2025 年 9 月 27 日夜间星历估算，适用于当晚观测。照片均由青天会骨干拍摄或来自公开版权天文影像，仅供参考。</p>
       <div class="celestial-grid">
         <article class="celestial-card">
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/NANeb3PS23_SCNR.jpg" alt="NGC 7000 北美洲星云" />
           <div class="celestial-content">
             <h4>NGC 7000 · 北美洲星云</h4>
             <div class="celestial-meta">
-              <span><strong>升起</strong><span>18:22</span></span>
-              <span><strong>中天</strong><span>01:05</span></span>
-              <span><strong>降落</strong><span>07:45</span></span>
+              <span><strong>升起</strong><span>14:01</span></span>
+              <span><strong>中天</strong><span>20:56</span></span>
+              <span><strong>降落</strong><span>03:51</span></span>
             </div>
-            <p>浩瀚的氢气发射星云，与美国大陆轮廓相似。适合广角相机或望远镜搭配窄带滤镜拍摄。</p>
+            <p>浩瀚的氢气发射星云，与北美洲大陆轮廓相似。适合广角相机或望远镜搭配窄带滤镜拍摄。</p>
             <div class="celestial-tags">
               <span class="chip">发射星云</span>
               <span class="chip">天鹅座</span>
@@ -508,8 +566,8 @@
           <div class="celestial-content">
             <h4>IC 405 · 火焰星云</h4>
             <div class="celestial-meta">
-              <span><strong>升起</strong><span>19:41</span></span>
-              <span><strong>中天</strong><span>02:48</span></span>
+              <span><strong>升起</strong><span>23:01</span></span>
+              <span><strong>中天</strong><span>05:14</span></span>
               <span><strong>降落</strong><span>09:52</span></span>
             </div>
             <p>位于御夫座的反射与发射复合星云，呈现蓝红相间的绚丽色彩。适合长焦摄影，视觉观测需暗天。</p>
@@ -526,11 +584,11 @@
           <div class="celestial-content">
             <h4>IC 1805 · 心脏星云</h4>
             <div class="celestial-meta">
-              <span><strong>升起</strong><span>18:55</span></span>
-              <span><strong>中天</strong><span>01:59</span></span>
-              <span><strong>降落</strong><span>09:03</span></span>
+              <span><strong>升起</strong><span>—</span></span>
+              <span><strong>中天</strong><span>02:27</span></span>
+              <span><strong>降落</strong><span>—</span></span>
             </div>
-            <p>仙后座明亮氢气区，形似跳动之心。适用重口径望远镜配窄带或双窄带滤镜观测。</p>
+            <p>位于拱极的仙后座明亮氢气区，形似跳动之心。适用重口径望远镜配窄带或双窄带滤镜观测。</p>
             <div class="celestial-tags">
               <span class="chip">发射星云</span>
               <span class="chip">仙后座</span>
@@ -544,9 +602,9 @@
           <div class="celestial-content">
             <h4>M31 · 仙女座星系</h4>
             <div class="celestial-meta">
-              <span><strong>升起</strong><span>17:09</span></span>
-              <span><strong>中天</strong><span>23:42</span></span>
-              <span><strong>降落</strong><span>06:18</span></span>
+              <span><strong>升起</strong><span>17:59</span></span>
+              <span><strong>中天</strong><span>00:40</span></span>
+              <span><strong>降落</strong><span>07:22</span></span>
             </div>
             <p>肉眼即可见的邻近星系。适合双筒望远镜扫掠，长焦拍摄可捕捉伴星系 M32、M110。</p>
             <div class="celestial-tags">
@@ -562,15 +620,67 @@
           <div class="celestial-content">
             <h4>M33 · 三角座星系</h4>
             <div class="celestial-meta">
-              <span><strong>升起</strong><span>17:48</span></span>
-              <span><strong>中天</strong><span>00:21</span></span>
-              <span><strong>降落</strong><span>06:58</span></span>
+              <span><strong>升起</strong><span>19:32</span></span>
+              <span><strong>中天</strong><span>01:31</span></span>
+              <span><strong>降落</strong><span>07:31</span></span>
             </div>
             <p>局部群第三大星系，低表面亮度需暗天条件。推荐大口径望远镜或长曝光摄影。</p>
             <div class="celestial-tags">
               <span class="chip">星系</span>
               <span class="chip">三角座</span>
               <span class="chip">长曝光</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="celestial-card">
+          <img src="src/M45.jpg" alt="M45 昴星团" />
+          <div class="celestial-content">
+            <h4>M45 · 昴星团</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>22:08</span></span>
+              <span><strong>中天</strong><span>03:44</span></span>
+              <span><strong>降落</strong><span>09:21</span></span>
+            </div>
+            <p>局部群第三大星系，低表面亮度需暗天条件。推荐大口径望远镜或长曝光摄影。</p>
+            <div class="celestial-tags">
+              <span class="chip">星团</span>
+              <span class="chip">双筒友好</span>
+              <span class="chip">金牛座</span>
+            </div>
+          </div>
+        </article>
+        <article class="celestial-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Double_Cluster.jpg/960px-Double_Cluster.jpg" alt="NGC 869 & NGC 884 双星团" />
+          <div class="celestial-content">
+            <h4>NGC 869 & NGC 884 · 双星团</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>18:03</span></span>
+              <span><strong>中天</strong><span>02:17</span></span>
+              <span><strong>降落</strong><span>10:31</span></span>
+            </div>
+            <p>双星团（NGC 869 与 NGC 884）是一对年轻而明亮的疏散星团，距地约7500光年，含数百颗炽热蓝白巨星和若干红超巨星，肉眼可见成一片朦胧光斑。借助望远镜目视观测，便能看到两团星海交相辉映的壮丽景象。</p>
+            <div class="celestial-tags">
+              <span class="chip">星团</span>
+              <span class="chip">目视观测</span>
+              <span class="chip">英仙座</span>
+            </div>
+          </div>
+        </article>
+        <article class="celestial-card">
+          <img src="src/M42.jpg" alt="M42 猎户座大星云" />
+          <div class="celestial-content">
+            <h4>M42 · 猎户座大星云</h4>
+            <div class="celestial-meta">
+              <span><strong>升起</strong><span>01:46</span></span>
+              <span><strong>中天</strong><span>05:32</span></span>
+              <span><strong>降落</strong><span>09:18</span></span>
+            </div>
+            <p>猎户座大星云（M42）是一片距离地球约1350光年的巨大恒星孕育区，肉眼可见，位于猎户座的“腰带”下方，用双筒望远镜或天文望远镜即可欣赏其状观的云气结构。</p>
+            <div class="celestial-tags">
+              <span class="chip">星云</span>
+              <span class="chip">猎户座</span>
+              <span class="chip">后半夜可见</span>
             </div>
           </div>
         </article>
@@ -581,11 +691,29 @@
     <section aria-labelledby="notes-section">
       <h3 id="notes-section">重点注意事项</h3>
       <ol class="notes-list">
-        <li><strong>保暖优先：</strong>夜间气温可能跌至 -10℃ 以下，请穿羽绒服或棉袄、佩戴手套、厚袜与保暖鞋，可准备高热量食品补充能量。</li>
+        <li><strong>注意保暖！注意保暖！注意保暖！</strong><br>
+          草原温度会比城里温度低大约10度，长期在户外静止站立体感温度会更冷，请参考隆冬着装（建议准备比冬季平时穿着厚度更厚的衣服！），至少穿两件羽绒服，必须戴手套、必须穿袜子（可以多层）、必须戴帽子、必须穿保暖的鞋。如果打算长时间观测，推荐带上高热量的食物，如牛肉干、巧克力、含糖饮料。<br>
+          由于观测地为草地，草地中可能会有倒刺或者苍耳，可能会挂在裤子和鞋子上。因此建议大家穿质地坚硬的，不易扎刺的裤子和鞋（如牛仔裤、徒步鞋或靴子等）。<br>
+          注意：乘车到达后会有休整时间，可以届时再换衣服。
+        </li>
+        <li>注意保管个人贵重财物。观测站内可能有牛马出没，请勿挑逗牛马。</li>
+        <li>关于住宿：已分配。独立卫浴，有热水。提供空调作为制热工具（建议提前开启热风）。</li>
+        <li><strong>请勿单独行动。</strong><br>
+          禁止独自离开观测地！ 禁止擅自前往不熟悉的田地﹑ 土堆等！若遇险，请向青年天文学会骨干同学打电话求助。
+        </li>
+        <li><strong>观测礼仪与注意事项</strong><br>
+          <ol class="notes-list notes-list--circled">
+            <li>不要在观测时打开手电筒！ 严禁使用任何闪光灯！ 为保护他人的视力， 避免破坏暗适应， 建议将手机调至夜间模式或深色模式， 亮度调节至最低。 严禁将手电筒指向星空！</li>
+            <li>请尽量不要使用指星笔， 避免干扰他人摄影。 如一定要使用激光指星笔， 一定要指向天空，<strong>绝对禁止向有人的方向指！</strong></li>
+            <li>行走时注意安全， 但不要在观测平台打开手电筒照明。 注意不要碰到望远镜或相机三脚架， 不要被地下可能存在的线缆绊倒。</li>
+            <li>不要未经允许随便触碰其他人的设备。 不要触碰任何玻璃表面， 特别是目镜表面！</li>
+          </ol>
+        </li>
+        <!-- <li><strong>保暖优先：</strong>夜间气温可能跌至 -10℃ 以下，请穿羽绒服或棉袄、佩戴手套、厚袜与保暖鞋，可准备高热量食品补充能量。</li>
         <li><strong>保管财物：</strong>住宿为二至三人间独立卫浴，请妥善保管个人贵重物品。</li>
         <li><strong>保持队形：</strong>严禁独自离开观测区，如遇险情请立即联系负责人。</li>
         <li><strong>观测礼仪：</strong>禁止使用白光手电与闪光灯，手机调至夜间模式与最低亮度；如需使用激光指星笔，务必确保朝向天空。</li>
-        <li><strong>注意行走安全：</strong>夜间设备与线缆较多，请勿触碰他人器材，避免碰撞望远镜与相机。</li>
+        <li><strong>注意行走安全：</strong>夜间设备与线缆较多，请勿触碰他人器材，避免碰撞望远镜与相机。</li> -->
       </ol>
     </section>
 
@@ -594,17 +722,20 @@
       <div class="timeline">
         <div class="timeline-day">
           <h4>9 月 29 日（周六）</h4>
-          <div class="timeline-item"><span>09:50</span>北京大学南门集合</div>
-          <div class="timeline-item"><span>10:00</span>准时发车（车牌号：京A JZ972），迟到将错过本次活动</div>
-          <div class="timeline-item"><span>17:00</span>抵达营地，分配房间并用晚餐</div>
-          <div class="timeline-item"><span>20:30</span>开始天文观测与望远镜教学、星空导览、星空摄影</div>
+          <div class="timeline-item"><span>09:20</span>北京大学南门集合。</div>
+          <div class="timeline-item"><span>09:30</span>准时发车（车牌号：京A JZ972），请务必按时集合，不要迟到！营地地处偏僻，无法通过公共交通抵达，若错过大巴车只能放弃活动，费用恕不退还。</div>
+          <div class="timeline-item"><span>11:30</span>到达下花园服务区，在下花园服务区用午餐。</div>
+          <div class="timeline-item"><span>16:30</span>抵达营地，分配房间并用晚餐</div>
+          <div class="timeline-item"><span>19:30</span>开始观测。观测可能会一直持续到次日清晨，期间您可随时回到房间休息。</div>
         </div>
         <div class="timeline-day">
           <h4>9 月 30 日（周日）</h4>
-          <div class="timeline-item"><span>08:30</span>起床、洗漱、早餐</div>
-          <div class="timeline-item"><span>09:30</span>前往乌兰哈达火山地质公园考察</div>
-          <div class="timeline-item"><span>11:30</span>午餐</div>
-          <div class="timeline-item"><span>12:30</span>乘大巴返程</div>
+          <div class="timeline-item"><span>08:30</span>起床、洗漱、早餐。</div>
+          <div class="timeline-item"><span>10:00</span>参观国家天文台明安图观测站。</div>
+          <div class="timeline-item"><span>11:00</span>自由活动。</div>
+          <div class="timeline-item"><span>12:00</span>拍摄合影，随后用午餐。</div>
+          <div class="timeline-item"><span>13:30</span>乘车返回。</div>
+          <div class="timeline-item"><span>20:30</span>到达北京大学南门，解散，晚餐自理。</div>
         </div>
       </div>
     </section>
@@ -616,7 +747,19 @@
         <div><strong>王亿禾（团支部书记）</strong> · <a href="tel:19946079326">199&nbsp;4607&nbsp;9326</a></div>
       </div>
     </section>
+
+    <section aria-labelledby="weather-section">
+      <h3 id="weather-section">观测地天气预报</h3>
+      <div class="weather-wrapper">
+        <div>
+          <!-- DO NOT REMOVE THIS LINK -->
+          数据源：<a href="https://www.meteoblue.com/en/weather/outdoorsports/seeing/42.219N115.241E1368_Asia%2FShanghai" target="_blank" rel="noopener">meteoblue</a>
+        </div>
+        <iframe src="https://www.meteoblue.com/en/weather/widget/seeing/42.219N115.241E1368_Asia%2FShanghai?geoloc=fixed&noground=0" frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 100%; height: 726px"></iframe>
+      </div>
+    </section>
   </main>
+
 
 </body>
 </html>
